@@ -8,9 +8,7 @@ export default class MyDocument extends Document {
   render() {
     return (
       <Html>
-        <Head>
-          <title>Learn Next JS</title>
-        </Head>
+        <Head />
         <body>
           <Main />
           <NextScript />

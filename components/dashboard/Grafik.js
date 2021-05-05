@@ -32,13 +32,13 @@ const Grafik = (props) => {
   return (
     <div className="row mt-3">
       <div className="col-12">
-        <div class="card">
-          <div class="card-header">Featured</div>
-          <div class="card-body">
+        <div className="card">
+          <div className="card-header">Featured</div>
+          <div className="card-body">
             {props.isGlobal ? (
-              <Line data={chartLine} />
-            ) : (
               <Pie data={chartPie} />
+            ) : (
+              <Line data={chartLine} />
             )}
           </div>
           <div className="card-footer d-flex justify-content-between text-center">

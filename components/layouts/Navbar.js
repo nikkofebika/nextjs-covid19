@@ -1,12 +1,10 @@
 import Head from "next/Head";
 import { useRouter } from "next/router";
+import Link from 'next/link';
 
 const Navbar = () => {
   return (
     <>
-      <Head>
-        <title>Kawal Conora</title>
-      </Head>
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <a className="navbar-brand" href="#">
           <img
@@ -32,14 +30,18 @@ const Navbar = () => {
         >
           <ul className="navbar-nav mr-auto">
             <li className="nav-item active">
-              <a className="nav-link" href="#">
-                Global
+              <Link href="/">
+                <a className="nav-link">
+                  Global
               </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
-                Indonesia
+              <Link href="/indonesia">
+                <a className="nav-link">
+                  Indonesia
               </a>
+              </Link>
             </li>
           </ul>
         </div>

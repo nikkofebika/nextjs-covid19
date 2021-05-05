@@ -1,9 +1,12 @@
 import React from "react";
+import NumberFormat from "react-number-format";
+import { sum } from "../../utils/library";
 import Footer from "../layouts/Footer";
 import Navbar from "../layouts/Navbar";
 import CardStatus from "./CardStatus";
 import Grafik from "./Grafik";
-export default function Dashboard() {
+import Table from "./Table";
+const Dashboard = (props) => {
   const initStyle = {
     minHeight: "80vh",
   };
@@ -21,37 +24,39 @@ export default function Dashboard() {
         </div>
         <div className="row">
           <CardStatus
-            bg="bg-danger"
-            title="Meninggal"
-            total="100000"
-            icon="images/meninggal.png"
-            className="col-xs-12 col-md-6 col-xl-3"
-          />
-          <CardStatus
             bg="bg-primary"
             title="Positif"
-            total="100000"
+            total={<NumberFormat value={sum("positif", props)} displayType={'text'} thousandSeparator={true} />}
             icon="images/positif.png"
             className="col-xs-12 col-md-6 col-xl-3"
           />
           <CardStatus
             bg="bg-success"
             title="Sembuh"
-            total="100000"
+            total={<NumberFormat value={sum("sembuh", props)} displayType={'text'} thousandSeparator={true} />}
             icon="images/sembuh.png"
             className="col-xs-12 col-md-6 col-xl-3"
           />
           <CardStatus
-            bg="bg-info"
+            bg="bg-danger"
             title="Meninggal"
-            total="100000"
+            total={<NumberFormat value={sum("meninggal", props)} displayType={'text'} thousandSeparator={true} />}
             icon="images/meninggal.png"
             className="col-xs-12 col-md-6 col-xl-3"
           />
+          <CardStatus
+            bg="bg-info"
+            title="Dirawat"
+            total={<NumberFormat value={sum("dirawat", props)} displayType={'text'} thousandSeparator={true} />}
+            icon="images/dirawat.png"
+            className="col-xs-12 col-md-6 col-xl-3"
+          />
         </div>
-        <Grafik />
+        <Grafik isGlobal={props.isGlobal} />
+        <Table isGlobal={props.isGlobal} />
       </div>
       <Footer />
     </div>
   );
 }
+export default Dashboard;
