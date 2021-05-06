@@ -43,3 +43,7 @@ export const sum = (key, props) => {
         }
     }
 }
+
+export const lineChrt = (props) => {
+    const monthLabel = ['Jan', 'Feb', 'Mar', 'Apr', 'Mei', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Des'];
+}

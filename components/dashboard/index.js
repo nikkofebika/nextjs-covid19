@@ -52,7 +52,7 @@ const Dashboard = (props) => {
             className="col-xs-12 col-md-6 col-xl-3"
           />
         </div>
-        <Grafik isGlobal={props.isGlobal} />
+        <Grafik isGlobal={props.isGlobal} data={props.data ? props.data : null} statistik={props.statistik ? props.statistik : null} />
         <Table isGlobal={props.isGlobal} />
       </div>
       <Footer />
